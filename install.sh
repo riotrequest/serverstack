@@ -10,6 +10,13 @@ apt-get install apache2 -y
 # install MariaDB
 apt-get install mariadb-server mariadb-client -y
 
+# install Memcached
+apt-get install -y memcached
+
+# enable and start the Memcached service
+systemctl enable memcached
+systemctl start memcached
+
 # secure MariaDB installation
 mysql_secure_installation
 
