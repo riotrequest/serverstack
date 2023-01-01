@@ -17,6 +17,15 @@ apt-get install -y memcached
 systemctl enable memcached
 systemctl start memcached
 
+# download the WP-CLI installer
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+# make the WP-CLI installer executable
+chmod +x wp-cli.phar
+
+# move the WP-CLI installer to a directory in the system PATH
+mv wp-cli.phar /usr/local/bin/wp
+
 # secure MariaDB installation
 mysql_secure_installation
 
