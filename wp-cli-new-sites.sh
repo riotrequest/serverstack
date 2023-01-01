@@ -1,0 +1,19 @@
+wp plugin install w3-total-cache --activate
+wp plugin update-option w3-total-cache object-cache.enabled true
+wp plugin update-option w3-total-cache object-cache.engine memcached
+wp plugin update-option w3-total-cache object-cache.memcached.servers localhost:11211
+wp plugin update-option w3-total-cache browser-cache.enabled true
+wp plugin update-option w3-total-cache browser-cache.no404wp true
+wp plugin update-option w3-total-cache minify.enabled true
+wp plugin update-option w3-total-cache minify.auto true
+wp plugin update-option w3-total-cache minify.html.enable true
+wp plugin update-option w3-total-cache minify.css.enable true
+wp plugin update-option w3-total-cache minify.js.enable true
+wp plugin update-option w3-total-cache minify.js.engine js
+wp plugin update-option w3-total-cache minify.html.inline.css false
+wp plugin update-option w3-total-cache minify.html.inline.js false
+wp plugin update-option w3-total-cache minify.html.strip.crlf true
+wp plugin update-option w3-total-cache minify.css.strip.comments true
+wp plugin update-option w3-total-cache minify.css.strip.crlf true
+wp plugin update-option w3-total-cache minify.js.strip.comments true
+wp plugin update-option w3-total-cache minify.js.strip.crlf true
