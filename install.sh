@@ -77,6 +77,25 @@ EOF
 # restart fail2ban
 systemctl restart fail2ban
 
+# install ufw
+apt-get install -y ufw
+
+# enable ufw
+ufw enable
+
+# allow incoming connections on needed ports (SSH)
+ufw allow 22 80 443 3306 9000 9999
+
+# enable the ufw logging module
+ufw logging on
+
+# configure ufw to send email notifications when a rule is matched
+cat > /etc/ufw/ufw.conf <<EOF
+ENABLED=yes
+LOGLEVEL=high
+EMAIL=root
+EOF
+
 # install ModSecurity and related dependencies
 apt-get install libapache2-mod-security2 -y
 
